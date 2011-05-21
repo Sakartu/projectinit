@@ -19,10 +19,18 @@ TEMPLATE_HOME = '~/.templates'
 init_git = False
 wanted = ''
 
+usage = 'This tool will setup a project for a given language in the current directory\n' 
+usage += 'Usage: {0} <project language>\n'.format(sys.argv[0]) 
+if os.path.isdir(os.path.expanduser(TEMPLATE_HOME)):
+	usage += 'Possible languages:\n'
+	for template in os.listdir(os.path.expanduser(TEMPLATE_HOME)):
+		usage += '\t{0}\n'.format(template)
+
 def main():
 	args = parse_args()
 	if len(args) < 1:
-		usage()
+		print(usage)
+		sys.exit(0)
 	
 	wanted = args[0]
 
@@ -67,23 +75,11 @@ def remove_dir(fullpath, remove):
 
 def parse_args():
 	global init_git
-	parser = optparse.OptionParser()
-	parser.add_option('-g', '--git', action='store_true', dest="init_git") #to initialize a git repo after initting the project
+	parser = optparse.OptionParser(usage)
+	parser.add_option('-g', '--git', action='store_true', dest="init_git", help="setup git after setting up the project") #to initialize a git repo after initting the project
 	(options, args) = parser.parse_args()
 	init_git = options.init_git
 	return args
 
-def usage():
-	print('This tool will setup a project for a given language in the current directory')
-	print('Usage: {0} <project language>'.format(sys.argv[0]))
-	if os.path.isdir(os.path.expanduser(TEMPLATE_HOME)):
-		print('Possible languages:')
-		for template in os.listdir(os.path.expanduser(TEMPLATE_HOME)):
-			print('\t{0}'.format(template))
-	sys.exit(0)
-	
-
 if __name__ == '__main__':
-	sys.argv.append('python')
-	sys.argv.append('-g')
 	main()
