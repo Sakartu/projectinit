@@ -22,8 +22,8 @@ Extra options
 =============
 projectinit provides the following extra options:
 
-git init
---------
+Git init after setup
+--------------------
 
 projectinit can create a new git repository for you after it has setup the template. Just add the -g option.
 
