@@ -14,9 +14,9 @@ There is very little configuration required:
 - Fill each of the subdirectories of .templates with the desired content. For instance, in python, provide a runnable main.py with some content, a README file and some of your favorite packages (don't forget __init__.py files!)
 - Whenever you want to create a new project of a given language, create a directory for the project somewhere on the filesystem, cd into that directory and type "projectinit.py <language>" to setup the project. projectinit.py will copy all the necessary files from the .templates directory to your working directory. So, if I want to start a python project called "foobar", the following commands will do the trick:
 
-    $ mkdir foobar
-    $ cd foobar
-    $ projectinit python
+> $ mkdir foobar
+> $ cd foobar
+> $ projectinit python
 
 Extra options
 =============
