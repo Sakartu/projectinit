@@ -42,3 +42,4 @@ def setup_project(template, templatedir, targetdir):
 		#now we have directories, let's copy files
 		for f in filenames:
 			shutil.copy(os.path.join(dirpath, f), newdir)
+

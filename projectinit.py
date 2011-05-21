@@ -45,12 +45,10 @@ def main():
 	
 	if options.init_git:
 		#we have to call 'git init' in the target dir
-		git = ['git', 'init', targetdir]
-		subprocess.call(git)
+		util.setup_git(targetdir)
 	elif options.init_mercurial: #we can only have one VCS
 		#we have to call 'hg init' in the target dir
-		hg = ['hg', 'init', targetdir]
-		subprocess.call(hg)
+		util.setup_mercurial(targetdir)
 
 def parse_args():
 	global options
