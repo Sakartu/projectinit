@@ -27,6 +27,11 @@ Git init after setup
 
 projectinit can create a new git repository for you after it has setup the template. Just add the -g option.
 
+Mercurial init after setup
+--------------------
+
+projectinit can create a new mercurial repository for you after it has setup the template. Just add the -m option.
+
 Different template directory
 ----------------------------
 
