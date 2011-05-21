@@ -3,7 +3,7 @@ projectinit
 
 This is a little tool that can be used to initialize projects for a given programming language in the current working directory.
 
-configuration
+Configuration
 =============
 
 There is very little configuration required:
@@ -18,7 +18,7 @@ $ mkdir foobar
 $ cd foobar
 $ projectinit python
 
-extra options
+Extra options
 =============
 projectinit provides the following extra options:
 
