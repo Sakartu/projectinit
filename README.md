@@ -8,7 +8,7 @@ Configuration
 
 There is very little configuration required:
 
-- First of all, make sure projectinit.py is in your path somewhere
+- First of all, make sure projectinit.py is in your PATH somewhere
 - Create a .templates directory in your homedirectory
 - Fill the .templates directory with templates. Each subdirectory of .templates is considered a template for a different programming language. For instance, if you have .templates/python and .templates/latex you can create projects in two languages, python and LaTeX. 
 - Fill each of the subdirectories of .templates with the desired content. For instance, in python, provide a runnable main.py with some content, a README file and some of your favorite packages (don't forget __init__.py files!)
@@ -26,3 +26,9 @@ git init
 --------
 
 projectinit can create a new git repository for you after it has setup the template. Just add the -g option.
+
+Different template directory
+----------------------------
+
+If you don't like the default template directory location, you can either symlink another dir on your fs as ~/.templates or you can change the TEMPLATE_HOME configuration parameter in projectinit.py
+
