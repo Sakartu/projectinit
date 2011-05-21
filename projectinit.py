@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+'''
+projectinit is a small utility that can be used to setup
+a project from a given project template in the current
+working directory.
+
+for more information, see the accompanied README.md file
+
+'''
 import sys
 import os
 import shutil
