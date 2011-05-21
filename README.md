@@ -15,7 +15,9 @@ There is very little configuration required:
 - Whenever you want to create a new project of a given language, create a directory for the project somewhere on the filesystem, cd into that directory and type "projectinit.py <language>" to setup the project. projectinit.py will copy all the necessary files from the .templates directory to your working directory. So, if I want to start a python project called "foobar", the following commands will do the trick:
 
 $ mkdir foobar
+
 $ cd foobar
+
 $ projectinit python
 
 Extra options
