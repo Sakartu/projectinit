@@ -43,3 +43,11 @@ def setup_project(template, templatedir, targetdir):
 		for f in filenames:
 			shutil.copy(os.path.join(dirpath, f), newdir)
 
+def setup_git(targetdir):
+	git = ['git', 'init', targetdir]
+	subprocess.call(git)
+
+def setup_mercurial(targetdir):
+	hg = ['hg', 'init', targetdir]
+	subprocess.call(hg)
+
