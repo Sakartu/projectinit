@@ -17,6 +17,7 @@ from glob import glob
 
 TEMPLATE_HOME = '~/.templates'
 init_git = False
+init_mercurial = False
 wanted = ''
 
 usage = 'This tool will setup a project for a given language in the current directory\n' 
@@ -63,6 +64,11 @@ def main():
 		#we have to call 'git init' in the target dir
 		git = ['git', 'init', targetdir]
 		subprocess.call(git)
+	elif init_mercurial: #we can only have one VCS
+		#we have to call 'hg init' in the target dir
+		hg = ['hg', 'init', targetdir]
+		subprocess.call(hg)
+
 
 def remove_dir(fullpath, remove):
 	if fullpath.startswith(remove):
@@ -74,11 +80,13 @@ def remove_dir(fullpath, remove):
 		return fullpath
 
 def parse_args():
-	global init_git
+	global init_git, init_mercurial
 	parser = optparse.OptionParser(usage)
 	parser.add_option('-g', '--git', action='store_true', dest="init_git", help="setup git after setting up the project") #to initialize a git repo after initting the project
+	parser.add_option('-m', '--mercurial', action='store_true', dest="init_mercurial", help="setup mercurial after setting up the project") #to initialize a mercurial repo after initting the project
 	(options, args) = parser.parse_args()
 	init_git = options.init_git
+	init_mercurial = options.init_mercurial
 	return args
 
 if __name__ == '__main__':
