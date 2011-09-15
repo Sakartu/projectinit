@@ -25,7 +25,7 @@ def find_template(templatedir, wanted):
 
     if os.path.isdir(templatedir):
         for t in os.listdir(templatedir):
-            if t == wanted:
+            if t.lower() == wanted.lower():
                 template = os.path.join(templatedir, t)
                 targetdir = os.path.abspath('.')
     else: 
@@ -39,7 +39,8 @@ def setup_project(template, templatedir, targetdir):
         #first create dirs if they aren't available
         reldir = remove_dir_prefix(dirpath, sourcedir)
         newdir = os.path.join(targetdir, reldir)
-        os.makedirs(newdir, exist_ok=True)
+        if not os.path.exist(newdir):
+            os.makedirs(newdir)
         #now we have directories, let's copy files
         for f in filenames:
             shutil.copy(os.path.join(dirpath, f), newdir)
