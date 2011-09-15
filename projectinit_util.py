@@ -39,7 +39,7 @@ def setup_project(template, templatedir, targetdir):
         #first create dirs if they aren't available
         reldir = remove_dir_prefix(dirpath, sourcedir)
         newdir = os.path.join(targetdir, reldir)
-        if not os.path.exist(newdir):
+        if not os.path.exists(newdir):
             os.makedirs(newdir)
         #now we have directories, let's copy files
         for f in filenames:
